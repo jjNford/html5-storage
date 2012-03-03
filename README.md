@@ -47,6 +47,8 @@ Saves data to localStorage (variables and objects).
 > **setExceptions( bool )** <br/><br/>
 `bool - If true all localStorage errors will be thrown globally as StorageException.`
 
+Turn localStorage exceptions on/off. If on a StorageException will be thrown on all localStorage errors.
+
 > **size()** <br/><br/>
 `Returns the number of entried currently stored in localStroage` <br/>
 `Throws StorageException if exceptions have been set to true.`
