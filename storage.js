@@ -1,4 +1,6 @@
 /*
+ * localStorage Enhanced
+ * 
  * Copyright (C) 2012, JJ Ford (jj.n.ford@gmail.com)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
