@@ -11,45 +11,45 @@ Features
 
 API
 ---
-> **_**
-
-Reference to default Storage Interface.
-
 > **clear()**
 
 Removes all data from localStorage.
 
 > **isSupported( fn )** <br/><br/>
 `fn - Callback function to be triggered if localStorage is not supported (optional).` <br/> 
-`Returns true if localStorage is supported by browser, false if not.`
+`Returns true if localStorage is supported by browser, false if not.` <br/>
+`Throws StorageException if exceptions have been set to true.`
 
 Determines if the current browser supported localStorage
 
 > **load( key )** <br/><br/>
 `key - The hash key to load localStorage data from.` <br/>
-`Returns data from localStorage, null if no data is found`
+`Returns data from localStorage, null if no data is found` <br/>
+`Throws StorageException if exceptions have been set to true.`
 
 Loads data from the localStorage (variables and objects).
 
-> **name**
-
-localStorage Enhanced namespace id.
-
 > **remove( key )** <br/><br/>
 `key - The hash key in localStorage where the data to remove is being stored.` <br/>
-`Returns true if data is succesfully removed from localStorage, false if it fails.`
+`Returns true if data is succesfully removed from localStorage, false if it fails.` <br/>
+`Throws StorageException if exceptions have been set to true.`
 
 Removes data from localStorage.
 
 > **save( key, data )** <br/><br/>
 `key - The has key to save data to in localStorage.` <br/>
 `data - The data to be saved.` <br/>
-`Returns true if data is saved successfully to localStorage, false if not.`
+`Returns true if data is saved successfully to localStorage, false if not.` <br/>
+`Throws StorageException if exceptions have been set to true.`
 
 Saves data to localStorage (variables and objects).
 
+> **setExceptions( bool )** <br/><br/>
+`bool - If true all localStorage errors will be thrown globally as StorageException.`
+
 > **size()** <br/><br/>
-`Returns the number of entried currently stored in localStroage`
+`Returns the number of entried currently stored in localStroage` <br/>
+`Throws StorageException if exceptions have been set to true.`
 
 Gets the number of items currently being stored in localStorage.
 

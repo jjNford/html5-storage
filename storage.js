@@ -26,10 +26,13 @@
 	
 	window.Storage = {
 
-		/**
-		 * Reference to native Storage Interface.
-		 */
 		_: _,
+		
+		_exception: "StorageException",
+		
+		_throw: false,
+		
+		name: "Storage",
 
 		/**
 		 * Removes all data from localStorage.
@@ -57,9 +60,10 @@
 				if(typeof fn == 'function') {
 					fn();
 				}
-				else {
-					// Handle error...
+				if(this._throw === true) {
+					throw this._exception;
 				}
+				return false;
 			}
 		},
 		
@@ -74,14 +78,12 @@
 				return JSON.parse(window['localStorage'][key]);
 			}
 			catch(error) {
+				if(this._throw === true) {
+					throw this._exception;
+				}
 				return null;
 			}
 		},
-		
-		/**
-		 * Namespace id.
-		 */
-		name: "Storage",
 		
 		/**
 		 * Removes data stored under the given hash key from localStorage.
@@ -95,6 +97,9 @@
 				return true;
 			}
 			catch(error) {
+				if(this._throw === true) {
+					throw this._exception;
+				}
 				return false;
 			}
 		},
@@ -115,7 +120,21 @@
 				return true;
 			}
 			catch(error) {
+				if(this._throw === true) {
+					throw this._exception;
+				}
 				return false;
+			}
+		},
+		
+		/**
+		 * Turn on/off localStroage exceptions.
+		 * 
+		 * @param bool Enable or disable localStorage Enhaced exceptions.
+		 */
+		setExceptions: function(bool) {
+			if(bool === true || bool === false) {
+				this._throw = bool;
 			}
 		},
 		
@@ -129,6 +148,9 @@
 				return window['localStorage'].length;
 			}
 			catch(error) {
+				if(this._throw === true) {
+					throw this._exception;
+				}
 				return 0;
 			}
 		}
