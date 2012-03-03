@@ -1,5 +1,5 @@
 /*
- * localStorage Enhanced
+ * localStorage enhanced
  * 
  * Copyright (C) 2012, JJ Ford (jj.n.ford@gmail.com)
  * 
