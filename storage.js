@@ -41,10 +41,10 @@
 		/**
 		 * Determine if the browser supports localStorage.
 		 * 
-		 * @param fn Callback to be run if localStorage is not supported.
+		 * @param fn Callback to be run if localStorage is not supported (optional).
 		 * @return True if localStorage is supported, false if not.
 		 */
-		isSupported: function() {
+		isSupported: function(fn) {
 			try {
 				if(window['localStorage'] !== null) {
 					return true;
