@@ -1,6 +1,6 @@
 Local Storage Enhanced
 =====================
-LocalStorage Enhanced takes advantage HTML5 localStorage by applying a safe and powerful wrapper to it.
+Local Storage Enhanced takes advantage HTML5 localStorage by applying a safe and powerful wrapper to it.
 
 Features
 --------
@@ -94,7 +94,3 @@ Gets the number of items currently being stored in localStorage.
 License
 -------
 - [MIT](http://www.opensource.org/licenses/mit-license.php)
-
-Changelog
----------
-- 03-03-2012 Initial release.
