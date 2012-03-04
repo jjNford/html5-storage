@@ -42,7 +42,7 @@ Just include storage.js into your project and you are ready to being using it.  
 
 API
 ---
-> **clear()**
+> **clear()** <br/><br/>
 `Returns true if localStorage is cleared, false if not` <br/>
 `Throws StorageException if exceptions have been set to true.`
 
