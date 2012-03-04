@@ -1,6 +1,6 @@
-Local Storage Plus
-=====================
-Local Storage Plus takes advantage HTML5 localStorage by applying a safe and powerful wrapper to it.
+HTML5 Storage
+=============
+HTML5 Storage takes advantage browser localStorage by applying a safe and powerful wrapper to it.
 
 Features
 --------
