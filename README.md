@@ -1,6 +1,6 @@
-Local Storage Enhanced
+Local Storage Plus
 =====================
-Local Storage Enhanced takes advantage HTML5 localStorage by applying a safe and powerful wrapper to it.
+Local Storage Plus takes advantage HTML5 localStorage by applying a safe and powerful wrapper to it.
 
 Features
 --------
