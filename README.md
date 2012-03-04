@@ -1,4 +1,4 @@
-localStorage Enhanced
+Local Storage Enhanced
 =====================
 LocalStorage Enhanced takes advantage HTML5 localStorage by applying a safe and powerful wrapper to it.
 
