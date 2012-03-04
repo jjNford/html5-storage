@@ -9,6 +9,37 @@ Features
 - Catches localStorage errors to allow for cleaner code.
 - No javascript library dependencies.
 
+How To Use
+----------
+Just include storage.js into your project and you are ready to being using it.  Here is an example.
+
+    if(Storage.isSupported() === true) {
+    
+        var myPoint = {x: 3, y: 2, info: {name: "point"}};
+        Storage.save("point", myPoint);
+        
+        var myPoint2 = Storage.load("point");
+        console.log(myPoint2.info.name); // Will print "point" to the console.
+        
+        Storage.remove("point");
+        var myPoint3 = Storage.load("point");
+        console.log(myPoint3); // Will print "null" to console.
+        
+        Storage.setExeptions(true);
+        try {
+            var myPoint4 = Storage.load("point");
+        }
+        catch(StorageException) {
+            console.log("There is nothing stored under point!"); // This will print to the console.
+        }
+        
+        Storage.save("X", 3);
+        Storage.clear();
+        
+        console.log(Storage.size()); // This will print "0" to the console.
+    }
+
+
 API
 ---
 > **clear()**
