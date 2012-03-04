@@ -147,7 +147,7 @@
 		},
 		
 		/**
-		 * Turn on/off localStroage exceptions.
+		 * Turn on/off localStroage exceptions (default off).
 		 * 
 		 * @param bool Enable or disable localStorage Enhaced exceptions.
 		 */
