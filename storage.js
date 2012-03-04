@@ -1,6 +1,6 @@
 /*
- * Local Storage Enhanced
- * <https://github.com/jjNford/localstorage-enhanced>
+ * Local Storage Plus
+ * <https://github.com/jjNford/localstorage-plus>
  * 
  * Copyright (C) 2012, JJ Ford (jj.n.ford@gmail.com)
  * 
