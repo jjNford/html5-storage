@@ -37,7 +37,7 @@
 		},
 
 		/**
-		 * Removes all data from localStorage.
+		 * Clear
 		 * 
 		 * @return True if localStorage is cleared, false if not.
 		 * @throws StorageException
@@ -56,7 +56,7 @@
 		},
 		
 		/**
-		 * Determine if the browser supports localStorage.
+		 * Is Supported
 		 * 
 		 * @param fn Callback to be run if localStorage is not supported (optional).
 		 * @return True if localStorage is supported, false if not.
@@ -83,7 +83,7 @@
 		},
 		
 		/**
-		 * Load data from the localStorage.
+		 * Load
 		 * 
 		 * @param key The hash key to load data from.
 		 * @return The stored data, null if no data if found.
@@ -108,7 +108,7 @@
 		},
 		
 		/**
-		 * Removes data stored under the given hash key from localStorage.
+		 * Remove
 		 * 
 		 * @param key The hash key the data to remove is stored under.
 		 * @return True if the data is found and removed, false if not.
@@ -128,7 +128,7 @@
 		},
 		
 		/**
-		 * Saves data to localStorage.
+		 * Save
 		 * 
 		 * @param key The hash key to save the data under.
 		 * @param data The data to be saved.
@@ -152,7 +152,7 @@
 		},
 		
 		/**
-		 * Turn on/off localStroage exceptions (default off).
+		 * Set Exceptions
 		 * 
 		 * @param bool Enable or disable localStorage Enhaced exceptions.
 		 */
@@ -163,7 +163,7 @@
 		},
 		
 		/**
-		 * Get the number of entries currently in localStorage.
+		 * Size
 		 * 
 		 * @return The lenght of the localStorage.
 		 * @throws StorageException
