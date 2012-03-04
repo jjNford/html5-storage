@@ -43,8 +43,11 @@ Just include storage.js into your project and you are ready to being using it.  
 API
 ---
 > **clear()**
+`Returns true if localStorage is cleared, false if not` <br/>
+`Throws StorageException if exceptions have been set to true.`
 
 Removes all data from localStorage.
+
 
 > **isSupported( fn )** <br/><br/>
 `fn - Callback function to be triggered if localStorage is not supported (optional).` <br/> 
