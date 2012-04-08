@@ -146,17 +146,12 @@
 		},
 		
 		/**
-		 * @return The lenght of the localStorage.
-		 * @throws StorageException
+		 * @return The number of elements currently in localStorage, 0 if localStorage is not supported.
 		 */
 		size: function() {
-			try {
-				return window['localStorage'].length;
-			}
-			catch(error) {
-				if(this._throw === true) {
-					throw this._exception;
-				}
+			if(Storage.supported) {
+				return window.localStorage.length;
+			} else {
 				return 0;
 			}
 		}
