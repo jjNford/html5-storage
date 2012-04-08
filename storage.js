@@ -33,7 +33,7 @@
 			this._ = _;
 			this._exception = "StorageException";
 			this._throw = false;
-			this.name = "Storage";
+			this.name = "html5-localStorage";
 		},
 
 		/**
