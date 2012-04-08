@@ -55,8 +55,8 @@
 		},
 		
 		/**
-		 * @param success Callback that is triggered if localStorage is supported by browser.
-		 * @param error Callback that is triggered if localStorage is not supported by browser.
+		 * @param success Callback function that is triggered if localStorage is supported by browser.
+		 * @param error Callback function that is triggered if localStorage is not supported by browser.
 		 * @return True if localStorage is supported, false if not.
 		 */
 		isSupported: function(success, error) {
