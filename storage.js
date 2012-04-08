@@ -34,6 +34,7 @@
 			this._exception = "StorageException";
 			this._throw = false;
 			this.name = "html5-localStorage";
+			this.supported = Storage.isSupported();
 		},
 
 		/**
@@ -54,25 +55,19 @@
 		},
 		
 		/**
-		 * @param fn Callback to be run if localStorage is not supported (optional).
+		 * @param success Callback that is triggered if localStorage is supported by browser.
+		 * @param error Callback that is triggered if localStorage is not supported by browser.
 		 * @return True if localStorage is supported, false if not.
-		 * @throws StorageException
 		 */
-		isSupported: function(fn) {
-			try {
-				if(window['localStorage'] !== null) {
-					return true;
-				} 
-				else {
-					return false;
+		isSupported: function(success, error) {
+			if("localStorage" in window) {
+				if(typeof success == 'function') {
+					success();
 				}
-			}
-			catch(error) {
-				if(typeof fn == 'function') {
-					fn();
-				}
-				if(this._throw === true) {
-					throw this._exception;
+				return true;
+			} else {
+				if(typeof error == 'function') {
+					error();
 				}
 				return false;
 			}
