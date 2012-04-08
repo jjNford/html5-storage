@@ -67,24 +67,21 @@
 		},
 		
 		/**
-		 * @param key The hash key to load data from.
-		 * @return The stored data, null if no data if found.
-		 * @throws StorageException
+		 * @param key The key to load data from in localStorage.
+		 * @return The data in localStorage (primitive and object), null if no data is found.
 		 */
 		load: function(key) {
-			try {
-				var temp = window['localStorage'][key];
+			if(Storage.supported) {
+				var data = window.localStorage[key];
+				if(data === undefined) {
+					return null;
+				}
 				try {
-					return JSON.parse(temp);
+					return JSON.parse(data);
+				} catch(nonobject) {
+					return data;
 				}
-				catch(error) {
-					return temp;
-				}
-			}
-			catch(error) {
-				if(this._throw === true) {
-					throw this._exception;
-				}
+			} else {
 				return null;
 			}
 		},
