@@ -36,15 +36,11 @@
 		},
 
 		/**
-		 * @param fn Callback function that is triggered after localStorage is cleared.
 		 * @return True if localStorage is cleared, false if localStorage is not supported.
 		 */
-		clear: function(fn) {
+		clear: function() {
 			if(Storage.supported) {
 				window.localStorage.clear();
-				if(typeof fn == 'function') {
-					fn();
-				}
 				return true;
 			} else {
 				return false;
