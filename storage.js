@@ -31,8 +31,6 @@
 		
 		init: function() {
 			this._ = _;
-			this._exception = "StorageException";
-			this._throw = false;
 			this.name = "html5-localStorage";
 			this.supported = Storage.isSupported();
 		},
@@ -132,15 +130,6 @@
 					throw this._exception;
 				}
 				return false;
-			}
-		},
-		
-		/**
-		 * @param bool Enable or disable localStorage Enhaced exceptions.
-		 */
-		setExceptions: function(bool) {
-			if(bool === true || bool === false) {
-				this._throw = bool;
 			}
 		},
 		
