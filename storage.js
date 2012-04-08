@@ -54,12 +54,12 @@
 		 */
 		isSupported: function(success, error) {
 			if("localStorage" in window) {
-				if(typeof success == 'function') {
+				if(typeof success === 'function') {
 					success();
 				}
 				return true;
 			} else {
-				if(typeof error == 'function') {
+				if(typeof error === 'function') {
 					error();
 				}
 				return false;
