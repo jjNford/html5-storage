@@ -87,19 +87,18 @@
 		},
 		
 		/**
-		 * @param key The hash key the data to remove is stored under.
-		 * @return True if the data is found and removed, false if not.
-		 * @throws StorageException
+		 * @param key The key to delete from localStroage.
+		 * @return True if the data is found and removed, false if not removed or not found.
 		 */
 		remove: function(key) {
-			try {
-				delete window['localStorage'][key];
-				return true;
-			}
-			catch(error) {
-				if(this._throw === true) {
-					throw this._exception;
+			if(Storage.supported) {
+				if(window.localStorage[key]) {
+					delete window.localStorage[key];
+					return true;
+				} else {
+					return false;
 				}
+			} else {
 				return false;
 			}
 		},
