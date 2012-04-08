@@ -108,23 +108,18 @@
 		},
 		
 		/**
-		 * @param key The hash key to save the data under.
-		 * @param data The data to be saved.
-		 * @return True if data is saved successfully, false if not.
-		 * @throws StorageException
+		 * @param key The key data will be saved under in the localStorage.
+		 * @param data The data to be saved to localStorage (primitives or objects).
+		 * @return True is data is saved successfully, false if not.
 		 */
 		save: function(key, data) {
-			try {
+			if(Storage.supported) {
 				if(typeof data === 'object') {
 					data = JSON.stringify(data);
 				}
-				window['localStorage'][key] = data;
+				window.localStorage[key] = data;
 				return true;
-			}
-			catch(error) {
-				if(this._throw === true) {
-					throw this._exception;
-				}
+			} else {
 				return false;
 			}
 		},
