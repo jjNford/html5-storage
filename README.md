@@ -1,108 +1,80 @@
 HTML5 Storage
 =============
-HTML5 Storage takes advantage browser localStorage by applying a safe and powerful wrapper to it.
+An HTML5 local storage wrapper that adds the ability to save and retrieve objects from local storage.
 
-Features
---------
-- Detected and plan for non-supported localStorage browers.
-- Store and load objects from localStorage.
-- Catches localStorage errors to allow for cleaner code.
-- No javascript library dependencies.
 
 How To Use
 ----------
-Just include storage.js into your project and you are ready to being using it.  Here is an example.
+1. Include the storage script in your project:
 
-    if(Storage.isSupported() === true) {
-    
-        var myPoint = {x: 3, y: 2, info: {name: "point"}};
-        Storage.save("point", myPoint);
-        
-        var myPoint2 = Storage.load("point");
-        console.log(myPoint2.info.name); // Will print "point" to the console.
-        
-        Storage.remove("point");
-        var myPoint3 = Storage.load("point");
-        console.log(myPoint3); // Will print "null" to console.
-        
-        Storage.setExeptions(true);
-        try {
-            var myPoint4 = Storage.load("point");
-        }
-        catch(StorageException) {
-            console.log("There is nothing stored under point!"); // This will print to the console.
-        }
-        
-        Storage.save("X", 3);
-        Storage.clear();
-        
-        console.log(Storage.size()); // This will print "0" to the console.
-    }
+	```html
+	<html>
+	...
+	...
+	<body>
+		...
+		...
+		
+		<script src="libs/html-storage/storage.js"></script>
+		
+		...
+		...
+	</body>
+	</html>
+	```
 
+2. Use `window.storage` to access the browsers local storage:
+
+	```javascript
+	function Person(name, gender) {
+		this.name = name;
+		this.gender = gender;
+	}
+	
+	var user = window.storage.getItem("user");
+	
+	if(user === null) {
+		user = new Person("JJ Ford", "male");
+		window.storage.setItem("user", user);
+	}
+	
+	```
+
+3. Include attribution to library.
 
 API
 ---
-> **clear()** <br/><br/>
-`Return - True if localStorage is cleared, false if not` <br/>
-`Throws - StorageException if exceptions have been set to true.`
 
-Removes all data from localStorage.
+>**clear()**
+><br><br>
+>Clears browsers local storage.
 
----
+<br>
 
-> **isSupported( fn )** <br/><br/>
-`fn - Callback function to be triggered if localStorage is not supported (optional).` <br/> 
-`Return - True if localStorage is supported by browser, false if not.` <br/>
-`Throws - StorageException if exceptions have been set to true.`
+>**getItem(key)**
+><br><br>
+>Retrieves the item associated with the given key from the browsers local storage.
 
-Determines if the current browser supported localStorage
+<br>
 
----
+>**isSupported()**
+><br><br>
+>Determines if the browser supports local storage.
 
-> **load( key )** <br/><br/>
-`Paramter - key - The hash key to load localStorage data from.` <br/>
-`Return - Data from localStorage, null if no data is found` <br/>
-`Throws - StorageException if exceptions have been set to true.`
+<br>
 
-Loads data from the localStorage (variables and objects).
+>**length**
+><br><br>
+>Returns the size of the browsers local storage.
 
----
+<br>
 
-> **remove( key )** <br/><br/>
-`Parameter - key - The hash key in localStorage where the data to remove is being stored.` <br/>
-`Return - True if data is succesfully removed from localStorage, false if it fails.` <br/>
-`Throws - StorageException if exceptions have been set to true.`
+>**removeItem(key)**
+><br><br>
+>Removes the item associated with the given key from the browsers local storage.
 
-Removes data from localStorage.
+<br>
 
----
-
-> **save( key, data )** <br/><br/>
-`Parameter - key - The has key to save data to in localStorage.` <br/>
-`Parameter - data - The data to be saved.` <br/>
-`Return - True if data is saved successfully to localStorage, false if not.` <br/>
-`Throws - StorageException if exceptions have been set to true.`
-
-Saves data to localStorage (variables and objects).
-
----
-
-> **setExceptions( bool )** <br/><br/>
-`Parameter - bool - If true all localStorage errors will be thrown globally as StorageException.`
-
-Turn localStorage exceptions on/off. If on a StorageException will be thrown on all localStorage errors.
-
-
----
-
-> **size()** <br/><br/>
-`Return - Number of entried currently stored in localStroage` <br/>
-`Throws - StorageException if exceptions have been set to true.`
-
-Gets the number of items currently being stored in localStorage.
-
----
-
-License
--------
-- [MIT](http://www.opensource.org/licenses/mit-license.php)
+>**setItem(key, data)**
+><br><br>
+>Saves the given data to the browsers local storage under the given key.
